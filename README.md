@@ -9,7 +9,7 @@ O site contém notícias sobre o cotidiano escolar, além de conteúdo multimíd
 ## 🚀 Como acessar
 
 O site está publicado no GitHub Pages e pode ser acessado pelo link:
-🔗 [https://Sartinimatheus.github.io/agencia-noticias](https://sartinimatheus.github.io/trabalho-conecta-news/)
+🔗 [ https://sartinimatheus.github.io/trabalho-conecta-news/](https://sartinimatheus.github.io/trabalho-conecta-news/)
 
 ## 🛠️ Tecnologias utilizadas
 
