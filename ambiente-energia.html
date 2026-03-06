@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energia renovável bate recorde mundial | Conecta News</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0d1117;
+    --highlight: #00c8d4;
+    --text: #1c2333;
+    --light: #6b7a8d;
+    --border: #e2e8f0;
+    --tag-bg: #fff8e1;
+    --tag-text: #e65100;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { font-family: 'DM Sans', sans-serif; background: #f7f9fc; color: var(--text); line-height: 1.7; }
+  a { text-decoration: none; }
+
+  /* ─── Header ─────────────────────────────── */
+  header { background: var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+  .header-top { background: var(--highlight); color: var(--primary); text-align: center; padding: 6px; font-size: .75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 900; color: #fff; }
+  .logo span { color: var(--highlight); }
+
+  /* ─── Article ─────────────────────────────── */
+  .article-wrap { max-width: 780px; margin: 56px auto 80px; padding: 0 24px; }
+
+  .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: .78rem; color: var(--light); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--light); transition: color .2s; }
+  .breadcrumb a:hover { color: var(--highlight); }
+  .breadcrumb i { font-size: .6rem; }
+
+  .article-tag { display: inline-block; background: var(--tag-bg); color: var(--tag-text); padding: 4px 12px; border-radius: 3px; font-size: .72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  .article-title { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; line-height: 1.2; letter-spacing: -.5px; margin-bottom: 32px; color: var(--primary); }
+  .article-hero { width: 100%; height: 420px; object-fit: cover; border-radius: 8px; margin-bottom: 36px; }
+
+  .article-body p { font-size: 1.05rem; color: #2d3748; margin-bottom: 22px; line-height: 1.8; }
+  .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 36px 0 14px; }
+  .article-body blockquote { border-left: 3px solid var(--highlight); padding: 14px 20px; background: #f0fdfe; margin: 28px 0; border-radius: 0 6px 6px 0; }
+  .article-body blockquote p { color: #1a5f63; font-style: italic; margin: 0; font-size: 1rem; }
+  .article-body blockquote cite { display: block; margin-top: 8px; font-size: .82rem; color: var(--light); font-style: normal; }
+
+  /* ─── Stats ───────────────────────────────── */
+  .stat-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; padding: 24px; background: #fff; border: 1px solid var(--border); border-radius: 8px; }
+  .stat-item { text-align: center; }
+  .stat-number { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--highlight); display: block; }
+  .stat-label { font-size: .8rem; color: var(--light); margin-top: 4px; }
+
+  /* ─── Related ─────────────────────────────── */
+  .related { margin-top: 56px; }
+  .related-title { font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--light); margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .related-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+  .related-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+  .related-card img { width: 100%; height: 130px; object-fit: cover; }
+  .related-card-body { padding: 14px; }
+  .related-card-tag { font-size: .68rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--tag-text); margin-bottom: 6px; }
+  .related-card a { font-size: .88rem; font-weight: 600; color: var(--text); line-height: 1.4; display: block; }
+  .related-card a:hover { color: var(--highlight); }
+
+  /* ─── Footer ──────────────────────────────── */
+  footer { background: var(--primary); color: rgba(255,255,255,.45); text-align: center; padding: 28px; font-size: .82rem; }
+  footer a { color: var(--highlight); }
+
+  /* ─── Responsive ──────────────────────────── */
+  @media (max-width: 640px) {
+    .article-title { font-size: 1.7rem; }
+    .article-hero { height: 230px; }
+    .stat-box { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">📡 Ao vivo: últimas notícias sobre saúde, tecnologia e meio ambiente</div>
+  <div class="header-inner">
+    <a class="logo">Conecta<span>News</span></a>
+  </div>
+</header>
+
+<article class="article-wrap">
+  <nav class="breadcrumb">
+    <a href="../index.html">Início</a><i class="fas fa-chevron-right"></i>
+    <a href="../index.html#environment">Meio Ambiente</a><i class="fas fa-chevron-right"></i>
+    <span>Energia renovável</span>
+  </nav>
+
+  <span class="article-tag">Meio Ambiente</span>
+  <h1 class="article-title">Energia renovável atinge recorde histórico e supera combustíveis fósseis na geração global</h1>
+
+  <img class="article-hero" src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&h=500&fit=crop" alt="Fazenda solar e turbinas eólicas">
+
+  <div class="article-body">
+    <p>Pela primeira vez na história, as fontes renováveis — solar, eólica, hidrelétrica e biomassa — superaram os combustíveis fósseis na geração elétrica global durante um período de 30 dias consecutivos, segundo dados divulgados pela Agência Internacional de Energia (AIE). O feito, registrado em maio de 2023, é considerado um ponto de inflexão na transição energética mundial.</p>
+
+    <div class="stat-box">
+      <div class="stat-item"><span class="stat-number">51%</span><div class="stat-label">da geração global via renováveis em maio</div></div>
+      <div class="stat-item"><span class="stat-number">+380 GW</span><div class="stat-label">de nova capacidade instalada em 2022</div></div>
+      <div class="stat-item"><span class="stat-number">−89%</span><div class="stat-label">no custo da energia solar em 10 anos</div></div>
+    </div>
+
+    <p>O relatório da AIE aponta que a capacidade instalada de energia solar fotovoltaica cresceu 380 gigawatts em 2022 — mais do que qualquer outra fonte energética na história —, e que o custo médio de geração solar caiu 89% na última década, tornando-a a fonte mais barata de eletricidade já produzida pela humanidade em grande parte do mundo.</p>
+
+    <h2>O papel da China e da Europa</h2>
+    <p>A China responde sozinha por quase 40% da nova capacidade renovável instalada globalmente. O país, que ainda é o maior emissor de CO₂ do mundo, paradoxalmente lidera os investimentos em energia limpa — uma consequência de sua estratégia industrial de dominar a cadeia de valor de painéis solares e baterias.</p>
+
+    <blockquote>
+      <p>"A transição energética deixou de ser uma questão de vontade política para se tornar uma questão de lógica econômica. Renováveis são simplesmente mais baratas, e o mercado está respondendo."</p>
+      <cite>— Fatih Birol, Diretor-Executivo da AIE</cite>
+    </blockquote>
+
+    <p>Na Europa, a crise energética desencadeada pela guerra na Ucrânia em 2022 paradoxalmente acelerou a adoção de renováveis: países que dependiam do gás russo aceleraram projetos de eólica offshore e solar para reduzir a dependência de importações. A Alemanha, por exemplo, gerou mais de 60% de sua eletricidade a partir de fontes renováveis no primeiro trimestre de 2023.</p>
+
+    <h2>O Brasil no contexto global</h2>
+    <p>O Brasil ocupa posição privilegiada nessa transição. Com uma matriz elétrica já composta por mais de 83% de fontes renováveis — hidrelétrica, eólica e solar —, o país tem potencial para se tornar um dos maiores exportadores de energia limpa do mundo, seja diretamente por meio de cabos submarinos, seja indiretamente via hidrogênio verde.</p>
+    <p>O Nordeste brasileiro já é considerado uma das regiões com maior potencial solar e eólico do planeta. Estados como Ceará, Rio Grande do Norte e Bahia atraíram nos últimos anos investimentos superiores a R$ 80 bilhões em infraestrutura de energia renovável, gerando mais de 120 mil empregos diretos na região.</p>
+
+    <h2>Desafios que persistem</h2>
+    <p>O entusiasmo com os recordes de renováveis não pode obscurecer os desafios que persistem: o armazenamento de energia em baterias ainda é insuficiente para garantir fornecimento estável em períodos sem sol ou vento, a transição justa para trabalhadores de indústrias fósseis precisa ser gerenciada, e a demanda global por energia cresce mais rápido do que a adição de capacidade renovável em alguns países emergentes.</p>
+  </div>
+
+  <section class="related">
+    <div class="related-title">Continue lendo · Meio Ambiente</div>
+    <div class="related-grid">
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&h=200&fit=crop" alt="">
+        <div class="related-card-body"><div class="related-card-tag">Meio Ambiente</div><a href="ambiente-reflorestamento.html">Projeto de reflorestamento recupera mil hectares</a></div>
+      </div>
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&h=200&fit=crop" alt="">
+        <div class="related-card-body"><div class="related-card-tag">Meio Ambiente</div><a href="ambiente-plasticos.html">Plásticos biodegradáveis: Solução ou novo problema?</a></div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<footer>&copy; 2026 <a href="../index.html">Conecta News</a>. Todos os direitos reservados.</footer>
+</body>
+</html>

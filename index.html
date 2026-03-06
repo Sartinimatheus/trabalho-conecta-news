@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta News | Notícias Temáticas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0d1117;
+            --secondary-color: #161b22;
+            --accent-color: #1a3a5c;
+            --highlight-color: #00c8d4;
+            --highlight-dim: rgba(0, 200, 212, 0.12);
+            --text-color: #1c2333;
+            --text-light: #6b7a8d;
+            --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+            --tag-health: #e8f5e9;
+            --tag-health-text: #1b5e20;
+            --tag-tech: #e3f2fd;
+            --tag-tech-text: #0d47a1;
+            --tag-env: #fff8e1;
+            --tag-env-text: #e65100;
+        }
+
+        body {
+            background-color: #f7f9fc;
+            color: var(--text-color);
+            line-height: 1.6;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ─── Header ─────────────────────────────── */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-top-bar {
+            background-color: var(--highlight-color);
+            color: var(--primary-color);
+            text-align: center;
+            padding: 6px 0;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            font-weight: 900;
+            color: white;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: var(--highlight-color); }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ─── Main Navigation Bar ─────────────────── */
+        .main-nav {
+            background-color: var(--secondary-color);
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 0;
+        }
+
+        .main-nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .main-nav ul li a {
+            display: block;
+            color: rgba(255,255,255,0.65);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.82rem;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            padding: 14px 22px;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .main-nav ul li a:hover { color: white; }
+
+        .main-nav ul li a.active { color: var(--highlight-color); }
+
+        .main-nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--highlight-color);
+        }
+
+        /* ─── Hero Section ────────────────────────── */
+        .hero {
+            background:
+                linear-gradient(160deg, rgba(13,17,23,0.88) 0%, rgba(26,58,92,0.80) 100%),
+                url('https://images.unsplash.com/photo-1588681664899-f142ff2dc9b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 90px 0 80px;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 60% 40%, rgba(0,200,212,0.12) 0%, transparent 65%);
+            pointer-events: none;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            background: var(--highlight-color);
+            color: var(--primary-color);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 2px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.4rem;
+            font-weight: 900;
+            margin-bottom: 18px;
+            line-height: 1.15;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 620px;
+            margin: 0 auto 32px;
+            color: rgba(255,255,255,0.8);
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        /* ─── Layout principal ────────────────────── */
+        .page-body {
+            display: flex;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ─── Índice lateral fixo ─────────────────── */
+        .sidebar-index {
+            width: 200px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 110px;
+            padding: 28px 0;
+            align-self: flex-start;
+        }
+
+        .sidebar-index-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 18px;
+            padding-left: 16px;
+        }
+
+        .sidebar-index ul { list-style: none; }
+
+        .sidebar-index ul li {
+            border-left: 2px solid var(--border-color);
+            transition: border-color 0.25s;
+        }
+
+        .sidebar-index ul li.active { border-left-color: var(--highlight-color); }
+
+        .sidebar-index ul li a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .sidebar-index ul li.active a { color: var(--text-color); font-weight: 600; }
+        .sidebar-index ul li a:hover  { color: var(--highlight-color); }
+
+        .sidebar-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            flex-shrink: 0;
+            transition: all 0.25s;
+        }
+
+        .sidebar-index ul li.active .sidebar-dot { background: var(--highlight-color); border-color: var(--highlight-color); }
+        .sidebar-index ul li a:hover .sidebar-dot { border-color: var(--highlight-color); }
+
+        /* ─── Área de conteúdo ────────────────────── */
+        .sections-wrapper {
+            flex: 1;
+            min-width: 0;
+            padding: 0 0 60px 32px;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .sections-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ─── Cards horizontais ───────────────────── */
+        .section-card {
+            background-color: var(--card-bg);
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.2s;
+            display: flex;
+            flex-direction: row;
+            min-height: 260px;
+        }
+
+        .section-card:first-child { border-top: 1px solid var(--border-color); }
+        .section-card:hover { background-color: #f0f7ff; }
+
+        .section-image {
+            width: 320px;
+            flex-shrink: 0;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .section-content {
+            flex: 1;
+            padding: 32px 36px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 3px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            align-self: flex-start;
+        }
+
+        .section-tag.health { background: var(--tag-health); color: var(--tag-health-text); }
+        .section-tag.tech   { background: var(--tag-tech);   color: var(--tag-tech-text);   }
+        .section-tag.env    { background: var(--tag-env);    color: var(--tag-env-text);    }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            line-height: 1.3;
+        }
+
+        .section-description {
+            color: var(--text-light);
+            font-size: 0.88rem;
+            margin-bottom: 18px;
+            line-height: 1.65;
+            max-width: 480px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: var(--border-color);
+            margin-bottom: 16px;
+        }
+
+        .section-articles {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .section-articles li {
+            padding: 9px 0;
+            border-bottom: 1px dashed var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .section-articles li:last-child { border-bottom: none; }
+
+        .article-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--highlight-color);
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+
+        .article-body { flex: 1; }
+
+        .section-articles a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            line-height: 1.45;
+            transition: color 0.2s;
+            display: block;
+        }
+
+        .section-articles a:hover { color: var(--highlight-color); }
+
+        .section-footer { margin-top: 16px; }
+
+        .read-all-link {
+            color: var(--highlight-color);
+            text-decoration: none;
+            font-size: 0.83rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s;
+        }
+
+        .read-all-link:hover { gap: 10px; }
+
+        /* ─── Podcast Section ─────────────────────── */
+        .podcast-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 60px 0;
+            margin: 0 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .podcast-section::before {
+            content: '';
+            position: absolute;
+            top: -80px; right: -80px;
+            width: 320px; height: 320px;
+            border-radius: 50%;
+            border: 60px solid rgba(0,200,212,0.07);
+            pointer-events: none;
+        }
+
+        .podcast-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .podcast-content { flex: 1; min-width: 280px; }
+
+        .podcast-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--highlight-color);
+            margin-bottom: 12px;
+        }
+
+        .podcast-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .podcast-content p {
+            color: rgba(255,255,255,0.72);
+            margin-bottom: 28px;
+            max-width: 440px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .podcast-player {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background-color: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 28px;
+            backdrop-filter: blur(10px);
+        }
+
+        .player-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        .player-icon-wrap {
+            width: 46px; height: 46px;
+            border-radius: 10px;
+            background: var(--highlight-dim);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .player-header i {
+            font-size: 1.4rem;
+            color: var(--highlight-color);
+        }
+
+        .player-description {
+            margin-top: 18px;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.55;
+        }
+
+        /* ─── Video Section ───────────────────────── */
+        .video-section {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #0d2137 100%);
+            color: white;
+            padding: 60px 0;
+            margin: 0 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-section::before {
+            content: '';
+            position: absolute;
+            bottom: -80px; left: -80px;
+            width: 320px; height: 320px;
+            border-radius: 50%;
+            border: 60px solid rgba(0,200,212,0.07);
+            pointer-events: none;
+        }
+
+        .video-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .video-content { flex: 1; min-width: 280px; }
+
+        .video-eyebrow {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--highlight-color);
+            margin-bottom: 12px;
+        }
+
+        .video-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .video-content p {
+            color: rgba(255,255,255,0.72);
+            margin-bottom: 28px;
+            max-width: 440px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .video-player {
+            flex: 1;
+            min-width: 300px;
+            max-width: 480px;
+            background-color: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 28px;
+            backdrop-filter: blur(10px);
+        }
+
+        .video-player-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .video-icon-wrap {
+            width: 46px; height: 46px;
+            border-radius: 10px;
+            background: var(--highlight-dim);
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .video-icon-wrap i {
+            font-size: 1.4rem;
+            color: var(--highlight-color);
+        }
+
+        .video-embed-wrap {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .video-embed-wrap iframe {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .video-description {
+            margin-top: 18px;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.55;
+        }
+
+        /* ─── Footer ──────────────────────────────── */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 56px 0 24px;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column { flex: 1; min-width: 180px; }
+
+        .footer-brand .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand .footer-logo span { color: var(--highlight-color); }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.88rem;
+            max-width: 230px;
+            line-height: 1.65;
+        }
+
+        .footer-column h3 {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--highlight-color);
+            margin-bottom: 18px;
+        }
+
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 10px; }
+
+        .footer-column ul li a {
+            color: rgba(255,255,255,0.55);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s;
+        }
+
+        .footer-column ul li a:hover { color: white; }
+
+        .copyright {
+            text-align: center;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.3);
+            font-size: 0.82rem;
+        }
+
+        /* ─── Animations ──────────────────────────── */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-up {
+            opacity: 0;
+            animation: fadeUp 0.55s ease forwards;
+        }
+
+        .fade-up:nth-child(1) { animation-delay: 0.1s; }
+        .fade-up:nth-child(2) { animation-delay: 0.22s; }
+        .fade-up:nth-child(3) { animation-delay: 0.34s; }
+
+        /* ─── Responsive ──────────────────────────── */
+        @media (max-width: 1024px) {
+            .sidebar-index { display: none; }
+            .sections-wrapper { padding-left: 0; border-left: none; }
+            .page-body { padding: 0 20px; }
+            .podcast-container { flex-direction: column; }
+            .podcast-player    { max-width: 100%; }
+            .video-container   { flex-direction: column; }
+            .video-player      { max-width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .header-container { flex-wrap: wrap; }
+            .mobile-menu-btn  { display: block; }
+            .main-nav ul { flex-wrap: wrap; justify-content: flex-start; }
+            .main-nav ul li a { padding: 10px 14px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p  { padding: 0 10px; }
+            .section-card  { flex-direction: column; min-height: unset; }
+            .section-image { width: 100%; height: 200px; }
+            .section-content { padding: 22px 20px; }
+        }
+
+        @media (max-width: 576px) {
+            .hero { padding: 60px 0 50px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-top-bar">
+            📡 Ao vivo: últimas notícias sobre saúde mental, tecnologia e meio ambiente
+        </div>
+        <div class="container header-container">
+            <a href="#" class="logo">Conecta<span>News</span></a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <div class="main-nav" id="mainNav">
+        <div class="container">
+            <ul>
+                <li><a href="#mental-health">Saúde Mental</a></li>
+                <li><a href="#ai-tech">Tecnologia IA</a></li>
+                <li><a href="#environment">Meio Ambiente</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-eyebrow">Edição de Março 2026</div>
+            <h1>Notícias que importam</h1>
+            <p>Fique atualizado com as últimas notícias sobre saúde mental, avanços em IA e as questões ambientais mais urgentes do nosso tempo.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <div class="page-body">
+
+            <!-- Índice lateral fixo -->
+            <aside class="sidebar-index">
+                <div class="sidebar-index-title">Nesta edição</div>
+                <ul>
+                    <li id="idx-mental-health">
+                        <a href="#mental-health"><span class="sidebar-dot"></span>Saúde Mental</a>
+                    </li>
+                    <li id="idx-ai-tech">
+                        <a href="#ai-tech"><span class="sidebar-dot"></span>Tecnologia IA</a>
+                    </li>
+                    <li id="idx-environment">
+                        <a href="#environment"><span class="sidebar-dot"></span>Meio Ambiente</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- Notícias -->
+            <div class="sections-wrapper">
+                <div class="sections-container">
+
+                    <!-- Saúde Mental -->
+                    <div class="section-card fade-up" id="mental-health">
+                        <div class="section-image" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwkR_IGks8apuuKie5j4p38MqJqlMD4dhwgg&s')"></div>
+                        <div class="section-content">
+                            <span class="section-tag health">Saúde Mental</span>
+                            <h2 class="section-title">Cuidando da Mente no Mundo Moderno</h2>
+                            <p class="section-description">As últimas descobertas e estratégias para promover bem-estar psicológico em um mundo cada vez mais acelerado.</p>
+                            <div class="section-divider"></div>
+                            <ul class="section-articles">
+                                <li>
+                                    <div class="article-dot"></div>
+                                    <div class="article-body"><a href="saude-mindfulness.html">Meditação mindfulness reduz estresse em 40%, revela estudo</a></div>
+                                </li>
+                                <li>
+                                    <div class="article-dot"></div>
+                                    <div class="article-body"><a href="saude-empresas.html">Empresas adotam políticas de saúde mental no trabalho</a></div>
+                                </li>
+                                <li>
+                                    <div class="article-dot"></div>
+                                    <div class="article-body"><a href="saude-tecnologia.html">Tecnologia auxilia no tratamento de ansiedade e depressão</a></div>
+                                </li>
+                            </ul>
+                            <div class="section-footer">
+                                <a href="#mental-health" class="read-all-link">Ver todas as matérias <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tecnologia IA -->
+                    <div class="section-card fade-up" id="ai-tech">
+                        <div class="section-image" style="background-image: url('https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80')"></div>
+                        <div class="section-content">
+                            <span class="section-tag tech">Tecnologia IA</span>
+                            <h2 class="section-title">Revolução da Inteligência Artificial</h2>
+                            <p class="section-description">Como a IA está transformando indústrias, criando oportunidades e levantando questões éticas importantes.</p>
+                            <div class="section-divider"></div>
+                            <ul class="section-articles">
+                                <li>
+                                    <div class="article-dot"></div>
+                                    <div class="article-body"><a href="ia-modelo-linguagem.html">Novo modelo de linguagem supera expectativas em testes</a></div>
+                                </li>
+                                <li>
+                                    <div class="article-dot"></div>
+                                    <div class="article-body"><a href="ia-medicina.html">IA na medicina: Diagnósticos mais precisos e rápidos</a></div>
+                                </li>
+                                <li>
+                                    <div class="article-dot"></div>
+                                    <div class="article-body"><a href="ia-regulamentacao.html">Regulamentação ética da IA: Um debate global</a></div>
+                                </li>
+                            </ul>
+                            <div class="section-footer">
+                                <a href="#ai-tech" class="read-all-link">Ver todas as matérias <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meio Ambiente -->
+                    <div class="section-card fade-up" id="environment">
+                        <div class="section-image" style="background-image: url('https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80')"></div>
+                        <div class="section-content">
+                            <span class="section-tag env">Meio Ambiente</span>
+                            <h2 class="section-title">Sustentabilidade e Conservação</h2>
+                            <p class="section-description">Iniciativas globais e locais para proteger nossos ecossistemas e enfrentar as mudanças climáticas.</p>
+                            <div class="section-divider"></div>
+                            <ul class="section-articles">
+                                <li>
+                                    <div class="article-dot"></div>
+                                    <div class="article-body"><a href="ambiente-energia.html">Energia renovável atinge recorde de produção mundial</a></div>
+                                </li>
+                                <li>
+                                    <div class="article-dot"></div>
+                                    <div class="article-body"><a href="ambiente-reflorestamento.html">Projeto de reflorestamento recupera mil hectares</a></div>
+                                </li>
+                                <li>
+                                    <div class="article-dot"></div>
+                                    <div class="article-body"><a href="ambiente-plasticos.html">Plásticos biodegradáveis: Solução ou novo problema?</a></div>
+                                </li>
+                            </ul>
+                            <div class="section-footer">
+                                <a href="#environment" class="read-all-link">Ver todas as matérias <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Podcast Section -->
+    <section class="podcast-section">
+        <div class="container podcast-container">
+            <div class="podcast-content">
+                <div class="podcast-eyebrow"><i class="fas fa-signal" style="margin-right:6px;"></i>Ouça agora</div>
+                <h2>Daily Minute: notícias importantes sobre saúde mental</h2>
+                <p>Ouça nosso podcast diário com as notícias mais importantes sobre saúde mental e sua relação com o mundo atual e tecnologia em apenas alguns segundos.</p>
+            </div>
+            <div class="podcast-player">
+                <div class="player-header">
+                    <div class="player-icon-wrap">
+                        <i class="fas fa-podcast"></i>
+                    </div>
+                </div>
+                <audio controls>
+                    <source src="Podcast.mpeg" type="audio/mpeg">
+                    Seu navegador não suporta áudio HTML5.
+                </audio>
+                <p class="player-description">Nesta edição: Impacto das redes sociais e tecnologia na saúde mental.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container video-container">
+            <div class="video-content">
+                <div class="video-eyebrow"><i class="fab fa-youtube" style="margin-right:6px;"></i>Assista agora</div>
+                <h2>Vídeo em destaque: inteligência artificial</h2>
+                <p>Acompanhe nosso vídeo selecionado com uma análise breve sobre a inteligência artificial diretamente do nosso canal no YouTube.</p>
+            </div>
+            <div class="video-player">
+                <div class="video-player-header">
+                    <div class="video-icon-wrap">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                </div>
+                <div class="video-embed-wrap">
+                    <iframe
+                        src="https://www.youtube.com/embed/iKQ98qlO5ko"
+                        title="Vídeo em destaque - Conecta News"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p class="video-description">Nesta edição em vídeo: como a inteligência artificial está impactando nosso planeta atualmente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column footer-brand">
+                    <div class="footer-logo">Conecta<span>News</span></div>
+                    <p>Notícias confiáveis sobre os temas mais importantes do nosso tempo.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="#mental-health">Saúde Mental</a></li>
+                        <li><a href="#ai-tech">Tecnologia IA</a></li>
+                        <li><a href="#environment">Meio Ambiente</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Conecta News. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Mobile Menu ──────────────────────────────
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav       = document.getElementById('mainNav');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // ── Smooth Scroll ────────────────────────────
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                e.preventDefault();
+                const el = document.querySelector(targetId);
+                if (el) {
+                    window.scrollTo({ top: el.offsetTop - 110, behavior: 'smooth' });
+                    if (window.innerWidth <= 768 && mainNav.classList.contains('active')) {
+                        mainNav.classList.remove('active');
+                        mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                    }
+                }
+            });
+        });
+
+        // ── Active Nav on Scroll ─────────────────────
+        function updateActiveIndex() {
+            const sections = document.querySelectorAll('.section-card[id]');
+            const navLinks = document.querySelectorAll('.main-nav a');
+            let current = '';
+
+            sections.forEach(sec => {
+                if (scrollY >= sec.offsetTop - 160) current = '#' + sec.id;
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === current) link.classList.add('active');
+            });
+
+            document.querySelectorAll('.sidebar-index ul li').forEach(li => {
+                li.classList.remove('active');
+            });
+            if (current) {
+                const idxItem = document.getElementById('idx-' + current.replace('#', ''));
+                if (idxItem) idxItem.classList.add('active');
+            }
+        }
+
+        window.addEventListener('scroll', updateActiveIndex);
+        updateActiveIndex();
+    </script>
+</body>
+</html>

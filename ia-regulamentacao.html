@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regulamentação ética da IA | Conecta News</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0d1117;
+    --highlight: #00c8d4;
+    --text: #1c2333;
+    --light: #6b7a8d;
+    --border: #e2e8f0;
+    --tag-bg: #e3f2fd;
+    --tag-text: #0d47a1;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { font-family: 'DM Sans', sans-serif; background: #f7f9fc; color: var(--text); line-height: 1.7; }
+  a { text-decoration: none; }
+
+  /* ─── Header ─────────────────────────────── */
+  header { background: var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+  .header-top { background: var(--highlight); color: var(--primary); text-align: center; padding: 6px; font-size: .75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 900; color: #fff; }
+  .logo span { color: var(--highlight); }
+
+  /* ─── Article ─────────────────────────────── */
+  .article-wrap { max-width: 780px; margin: 56px auto 80px; padding: 0 24px; }
+
+  .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: .78rem; color: var(--light); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--light); transition: color .2s; }
+  .breadcrumb a:hover { color: var(--highlight); }
+  .breadcrumb i { font-size: .6rem; }
+
+  .article-tag { display: inline-block; background: var(--tag-bg); color: var(--tag-text); padding: 4px 12px; border-radius: 3px; font-size: .72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  .article-title { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; line-height: 1.2; letter-spacing: -.5px; margin-bottom: 32px; color: var(--primary); }
+  .article-hero { width: 100%; height: 420px; object-fit: cover; border-radius: 8px; margin-bottom: 36px; }
+
+  .article-body p { font-size: 1.05rem; color: #2d3748; margin-bottom: 22px; line-height: 1.8; }
+  .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 36px 0 14px; }
+  .article-body blockquote { border-left: 3px solid var(--highlight); padding: 14px 20px; background: #f0fdfe; margin: 28px 0; border-radius: 0 6px 6px 0; }
+  .article-body blockquote p { color: #1a5f63; font-style: italic; margin: 0; font-size: 1rem; }
+  .article-body blockquote cite { display: block; margin-top: 8px; font-size: .82rem; color: var(--light); font-style: normal; }
+
+  /* ─── Related ─────────────────────────────── */
+  .related { margin-top: 56px; }
+  .related-title { font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--light); margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .related-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+  .related-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+  .related-card img { width: 100%; height: 130px; object-fit: cover; }
+  .related-card-body { padding: 14px; }
+  .related-card-tag { font-size: .68rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--tag-text); margin-bottom: 6px; }
+  .related-card a { font-size: .88rem; font-weight: 600; color: var(--text); line-height: 1.4; display: block; }
+  .related-card a:hover { color: var(--highlight); }
+
+  /* ─── Footer ──────────────────────────────── */
+  footer { background: var(--primary); color: rgba(255,255,255,.45); text-align: center; padding: 28px; font-size: .82rem; }
+  footer a { color: var(--highlight); }
+
+  /* ─── Responsive ──────────────────────────── */
+  @media (max-width: 640px) {
+    .article-title { font-size: 1.7rem; }
+    .article-hero { height: 230px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">📡 Ao vivo: últimas notícias sobre saúde, tecnologia e meio ambiente</div>
+  <div class="header-inner">
+    <a class="logo">Conecta<span>News</span></a>
+  </div>
+</header>
+
+<article class="article-wrap">
+  <nav class="breadcrumb">
+    <a href="../index.html">Início</a><i class="fas fa-chevron-right"></i>
+    <a href="../index.html#ai-tech">Tecnologia IA</a><i class="fas fa-chevron-right"></i>
+    <span>Regulamentação da IA</span>
+  </nav>
+
+  <span class="article-tag">Tecnologia IA</span>
+  <h1 class="article-title">Regulamentação ética da IA: o debate global que vai definir o futuro da tecnologia</h1>
+
+  <img class="article-hero" src="https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=900&h=500&fit=crop" alt="Debate sobre regulamentação de tecnologia em parlamento">
+
+  <div class="article-body">
+    <p>Enquanto a inteligência artificial avança em velocidade sem precedentes, governos, organismos internacionais e a própria indústria de tecnologia travam um debate intenso sobre como regulamentar o desenvolvimento e o uso de sistemas de IA. A questão central não é se regulamentar, mas como fazê-lo de forma que proteja pessoas sem sufocar a inovação.</p>
+    <p>A União Europeia saiu na frente com o AI Act, o primeiro marco regulatório abrangente para IA no mundo, aprovado pelo Parlamento Europeu em março de 2024. A lei classifica os sistemas de IA por nível de risco — de mínimo a inaceitável — e estabelece obrigações proporcionais para cada categoria, incluindo transparência, auditabilidade e, nos casos de risco mais elevado, avaliações de impacto obrigatórias.</p>
+
+    <h2>As diferentes abordagens globais</h2>
+    <p>O contraste entre as abordagens regulatórias ao redor do mundo é marcante. Enquanto a Europa aposta em regras abrangentes e preventivas, os Estados Unidos optaram, até recentemente, por diretrizes voluntárias e regulação setorial — deixando a cada agência (FDA, SEC, FTC) a responsabilidade de adaptar suas próprias regras ao contexto da IA. A China, por sua vez, implementou regulações específicas para IA generativa e sistemas de recomendação, com foco em controle de conteúdo e proteção de dados.</p>
+
+    <blockquote>
+      <p>"O risco de uma corrida regulatória para o fundo do poço é real. Se jurisdições importantes competirem por atrair empresas de IA com menos restrições, todos perdem — menos as empresas."</p>
+      <cite>— Dra. Cathy O'Neil, autora de "Weapons of Math Destruction"</cite>
+    </blockquote>
+
+    <p>O Brasil apresentou o PL 2338/2023, que estabelece princípios gerais para uso responsável de IA, mas ainda aguarda aprovação final. Especialistas brasileiros criticam a abordagem por considerá-la vaga demais para gerar obrigações concretas às empresas e fraca para proteger grupos vulneráveis de usos discriminatórios.</p>
+
+    <h2>Os pontos mais controversos</h2>
+    <p>Entre os temas mais sensíveis no debate global estão o reconhecimento facial em espaços públicos — proibido na Europa para uso policial, mas amplamente utilizado em outros países —, a responsabilização por danos causados por sistemas autônomos de IA e a obrigação de transparência sobre os dados de treinamento de modelos de linguagem.</p>
+    <p>A questão dos direitos autorais no treinamento de modelos de IA gerou dezenas de processos judiciais nos EUA, envolvendo artistas visuais, escritores e músicos. As decisões desses casos devem criar precedentes importantes para o setor.</p>
+
+    <h2>O papel da autorregulação</h2>
+    <p>Paralelamente à regulação governamental, a indústria criou iniciativas de autorregulação como o Frontier Model Forum, que reúne as principais desenvolvedoras de IA para estabelecer padrões de segurança compartilhados. Críticos, porém, questionam a eficácia de mecanismos voluntários criados pelas próprias empresas que seriam reguladas.</p>
+    <p>O consenso entre especialistas de diferentes perspectivas é que a regulamentação da IA precisará ser dinâmica — capaz de evoluir rapidamente conforme a tecnologia avança — e internacional, dado que modelos de IA não reconhecem fronteiras nacionais. O próximo grande marco será a Cúpula de Segurança em IA prevista para 2024, que deve reunir os principais países produtores da tecnologia.</p>
+  </div>
+
+  <section class="related">
+    <div class="related-title">Continue lendo · Tecnologia IA</div>
+    <div class="related-grid">
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=200&fit=crop" alt="">
+        <div class="related-card-body"><div class="related-card-tag">Tecnologia IA</div><a href="ia-modelo-linguagem.html">Novo modelo de linguagem supera expectativas em testes</a></div>
+      </div>
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&h=200&fit=crop" alt="">
+        <div class="related-card-body"><div class="related-card-tag">Tecnologia IA</div><a href="ia-medicina.html">IA na medicina: diagnósticos mais precisos e rápidos</a></div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<footer>&copy; 2026 <a href="../index.html">Conecta News</a>. Todos os direitos reservados.</footer>
+</body>
+</html>

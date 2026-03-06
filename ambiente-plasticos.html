@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plásticos biodegradáveis: solução ou problema? | Conecta News</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0d1117;
+    --highlight: #00c8d4;
+    --text: #1c2333;
+    --light: #6b7a8d;
+    --border: #e2e8f0;
+    --tag-bg: #fff8e1;
+    --tag-text: #e65100;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { font-family: 'DM Sans', sans-serif; background: #f7f9fc; color: var(--text); line-height: 1.7; }
+  a { text-decoration: none; }
+
+  /* ─── Header ─────────────────────────────── */
+  header { background: var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+  .header-top { background: var(--highlight); color: var(--primary); text-align: center; padding: 6px; font-size: .75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 900; color: #fff; }
+  .logo span { color: var(--highlight); }
+
+  /* ─── Article ─────────────────────────────── */
+  .article-wrap { max-width: 780px; margin: 56px auto 80px; padding: 0 24px; }
+
+  .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: .78rem; color: var(--light); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--light); transition: color .2s; }
+  .breadcrumb a:hover { color: var(--highlight); }
+  .breadcrumb i { font-size: .6rem; }
+
+  .article-tag { display: inline-block; background: var(--tag-bg); color: var(--tag-text); padding: 4px 12px; border-radius: 3px; font-size: .72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  .article-title { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; line-height: 1.2; letter-spacing: -.5px; margin-bottom: 32px; color: var(--primary); }
+  .article-hero { width: 100%; height: 420px; object-fit: cover; border-radius: 8px; margin-bottom: 36px; }
+
+  .article-body p { font-size: 1.05rem; color: #2d3748; margin-bottom: 22px; line-height: 1.8; }
+  .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 36px 0 14px; }
+  .article-body blockquote { border-left: 3px solid var(--highlight); padding: 14px 20px; background: #f0fdfe; margin: 28px 0; border-radius: 0 6px 6px 0; }
+  .article-body blockquote p { color: #1a5f63; font-style: italic; margin: 0; font-size: 1rem; }
+  .article-body blockquote cite { display: block; margin-top: 8px; font-size: .82rem; color: var(--light); font-style: normal; }
+
+  /* ─── Pros & Cons ─────────────────────────── */
+  .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+  .pros, .cons { padding: 20px; border-radius: 8px; }
+  .pros { background: #e8f5e9; border: 1px solid #c8e6c9; }
+  .cons { background: #fce4ec; border: 1px solid #f8bbd0; }
+  .pros h3 { color: #2e7d32; font-size: .9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .cons h3 { color: #c62828; font-size: .9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .pros ul, .cons ul { list-style: none; }
+  .pros ul li, .cons ul li { font-size: .88rem; padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,.06); display: flex; gap: 8px; align-items: flex-start; }
+  .pros ul li:last-child, .cons ul li:last-child { border-bottom: none; }
+  .pros ul li::before { content: '✓'; color: #2e7d32; font-weight: 700; flex-shrink: 0; }
+  .cons ul li::before { content: '✗'; color: #c62828; font-weight: 700; flex-shrink: 0; }
+
+  /* ─── Related ─────────────────────────────── */
+  .related { margin-top: 56px; }
+  .related-title { font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--light); margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .related-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+  .related-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+  .related-card img { width: 100%; height: 130px; object-fit: cover; }
+  .related-card-body { padding: 14px; }
+  .related-card-tag { font-size: .68rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--tag-text); margin-bottom: 6px; }
+  .related-card a { font-size: .88rem; font-weight: 600; color: var(--text); line-height: 1.4; display: block; }
+  .related-card a:hover { color: var(--highlight); }
+
+  /* ─── Footer ──────────────────────────────── */
+  footer { background: var(--primary); color: rgba(255,255,255,.45); text-align: center; padding: 28px; font-size: .82rem; }
+  footer a { color: var(--highlight); }
+
+  /* ─── Responsive ──────────────────────────── */
+  @media (max-width: 640px) {
+    .article-title { font-size: 1.7rem; }
+    .article-hero { height: 230px; }
+    .pros-cons { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">📡 Ao vivo: últimas notícias sobre saúde, tecnologia e meio ambiente</div>
+  <div class="header-inner">
+    <a class="logo">Conecta<span>News</span></a>
+  </div>
+</header>
+
+<article class="article-wrap">
+  <nav class="breadcrumb">
+    <a href="../index.html">Início</a><i class="fas fa-chevron-right"></i>
+    <a href="../index.html#environment">Meio Ambiente</a><i class="fas fa-chevron-right"></i>
+    <span>Plásticos biodegradáveis</span>
+  </nav>
+
+  <span class="article-tag">Meio Ambiente</span>
+  <h1 class="article-title">Plásticos biodegradáveis: promessa real ou falsa solução para a crise do plástico?</h1>
+
+  <img class="article-hero" src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=900&h=500&fit=crop" alt="Plásticos e resíduos em ambiente natural">
+
+  <div class="article-body">
+    <p>O mercado global de plásticos biodegradáveis deve atingir US$ 29 bilhões até 2027, impulsionado por regulações ambientais mais rígidas, pressão de consumidores e a busca da indústria por alternativas às embalagens convencionais. Mas por trás das promessas de sustentabilidade, cientistas e especialistas ambientais alertam para um cenário mais complexo — e em alguns casos, preocupante.</p>
+    <p>A questão começa na própria definição: "biodegradável" não significa necessariamente "ambientalmente seguro". Existem diferentes categorias de plásticos alternativos com propriedades radicalmente distintas, e a confusão entre elas está gerando o que especialistas chamam de "greenwashing estrutural" na indústria de embalagens.</p>
+
+    <h2>Entendendo as diferenças</h2>
+    <p>Os principais tipos de plásticos biodegradáveis no mercado incluem os bioplásticos — feitos de fontes renováveis como milho, cana-de-açúcar e celulose —, os plásticos oxo-degradáveis — convencionais com aditivos que aceleram sua fragmentação — e os compostáveis certificados, que se degradam em condições industriais específicas.</p>
+
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>Potenciais vantagens</h3>
+        <ul>
+          <li>Redução da dependência do petróleo</li>
+          <li>Menor pegada de carbono (em alguns casos)</li>
+          <li>Compostagem industrial viável</li>
+          <li>Inovação em embalagens funcionais</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>Problemas identificados</h3>
+        <ul>
+          <li>Degradam-se apenas em condições específicas</li>
+          <li>Contaminam o sistema de reciclagem convencional</li>
+          <li>Uso intensivo de terra e água na produção</li>
+          <li>Oxo-degradáveis geram microplásticos</li>
+        </ul>
+      </div>
+    </div>
+
+    <blockquote>
+      <p>"Um plástico 'compostável' que vai para o aterro ou para o oceano não se comporta de forma diferente do plástico convencional. O rótulo não transforma o destino do material."</p>
+      <cite>— Dr. Roland Geyer, pesquisador de resíduos plásticos da UC Santa Barbara</cite>
+    </blockquote>
+
+    <p>Os plásticos oxo-degradáveis são especialmente problemáticos: ao se fragmentarem sob ação da luz solar e do calor, não desaparecem — tornam-se microplásticos que penetram nos solos, nos oceanos e na cadeia alimentar. A União Europeia proibiu sua comercialização em 2021, mas eles ainda são amplamente usados em outros mercados, inclusive no Brasil.</p>
+
+    <h2>O problema da infraestrutura</h2>
+    <p>Mesmo os plásticos genuinamente compostáveis apresentam um desafio crítico: eles só se degradam adequadamente em composteiras industriais que operam a temperaturas entre 55°C e 70°C. No Brasil, apenas 0,4% dos municípios possuem infraestrutura de compostagem industrial, o que significa que a grande maioria dos plásticos "compostáveis" termina em aterros ou lixões, onde se comportam como plástico comum.</p>
+    <p>Além disso, quando misturados ao fluxo de reciclagem convencional, contaminam o processo e reduzem a qualidade do material reciclado. As cooperativas de catadores, que dependem da qualidade do material coletado para sua subsistência, relatam prejuízos crescentes com a confusão gerada pelos rótulos de biodegradabilidade.</p>
+
+    <h2>O que realmente funciona</h2>
+    <p>Especialistas convergem para a mesma conclusão: não existe substituto eficaz para a redução do uso de plástico desde a origem. Sistemas de embalagens reutilizáveis, refil e reuso já demonstraram reduções de impacto ambiental muito superiores às obtidas pela substituição por bioplásticos. A regulação europeia de embalagens, aprovada em 2024, prioriza exatamente essa hierarquia: primeiro reduzir, depois reutilizar, só então reciclar ou compostar.</p>
+    <p>No Brasil, o Plano Nacional de Resíduos Sólidos estabelece metas de redução de resíduos plásticos mas ainda carece de instrumentos econômicos — como taxação de embalagens de uso único — para tornar a mudança de comportamento competitiva em relação ao modelo descartável atual.</p>
+  </div>
+
+  <section class="related">
+    <div class="related-title">Continue lendo · Meio Ambiente</div>
+    <div class="related-grid">
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=200&fit=crop" alt="">
+        <div class="related-card-body"><div class="related-card-tag">Meio Ambiente</div><a href="ambiente-energia.html">Energia renovável atinge recorde de produção mundial</a></div>
+      </div>
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&h=200&fit=crop" alt="">
+        <div class="related-card-body"><div class="related-card-tag">Meio Ambiente</div><a href="ambiente-reflorestamento.html">Projeto de reflorestamento recupera mil hectares</a></div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<footer>&copy; 2026 <a href="../index.html">Conecta News</a>. Todos os direitos reservados.</footer>
+</body>
+</html>

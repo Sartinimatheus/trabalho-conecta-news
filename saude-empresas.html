@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Empresas adotam políticas de saúde mental | Conecta News</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #0d1117;
+    --highlight: #00c8d4;
+    --text: #1c2333;
+    --light: #6b7a8d;
+    --border: #e2e8f0;
+    --tag-bg: #e8f5e9;
+    --tag-text: #1b5e20;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body { font-family: 'DM Sans', sans-serif; background: #f7f9fc; color: var(--text); line-height: 1.7; }
+  a { text-decoration: none; }
+
+  /* ─── Header ─────────────────────────────── */
+  header { background: var(--primary); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+  .header-top { background: var(--highlight); color: var(--primary); text-align: center; padding: 6px; font-size: .75rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .header-inner { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 900; color: #fff; }
+  .logo span { color: var(--highlight); }
+
+  /* ─── Article ─────────────────────────────── */
+  .article-wrap { max-width: 780px; margin: 56px auto 80px; padding: 0 24px; }
+
+  .breadcrumb { display: flex; align-items: center; gap: 6px; font-size: .78rem; color: var(--light); margin-bottom: 24px; }
+  .breadcrumb a { color: var(--light); transition: color .2s; }
+  .breadcrumb a:hover { color: var(--highlight); }
+  .breadcrumb i { font-size: .6rem; }
+
+  .article-tag { display: inline-block; background: var(--tag-bg); color: var(--tag-text); padding: 4px 12px; border-radius: 3px; font-size: .72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+  .article-title { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; line-height: 1.2; letter-spacing: -.5px; margin-bottom: 32px; color: var(--primary); }
+  .article-hero { width: 100%; height: 420px; object-fit: cover; border-radius: 8px; margin-bottom: 36px; }
+
+  .article-body p { font-size: 1.05rem; color: #2d3748; margin-bottom: 22px; line-height: 1.8; }
+  .article-body h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 36px 0 14px; }
+  .article-body blockquote { border-left: 3px solid var(--highlight); padding: 14px 20px; background: #f0fdfe; margin: 28px 0; border-radius: 0 6px 6px 0; }
+  .article-body blockquote p { color: #1a5f63; font-style: italic; margin: 0; font-size: 1rem; }
+  .article-body blockquote cite { display: block; margin-top: 8px; font-size: .82rem; color: var(--light); font-style: normal; }
+
+  /* ─── Stats ───────────────────────────────── */
+  .stat-box { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 28px 0; padding: 24px; background: #fff; border: 1px solid var(--border); border-radius: 8px; }
+  .stat-item { text-align: center; }
+  .stat-number { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--highlight); display: block; }
+  .stat-label { font-size: .8rem; color: var(--light); margin-top: 4px; }
+
+  /* ─── Related ─────────────────────────────── */
+  .related { margin-top: 56px; }
+  .related-title { font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--light); margin-bottom: 20px; }
+  .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .related-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; transition: transform .2s, box-shadow .2s; }
+  .related-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+  .related-card img { width: 100%; height: 130px; object-fit: cover; }
+  .related-card-body { padding: 14px; }
+  .related-card-tag { font-size: .68rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: var(--tag-text); margin-bottom: 6px; }
+  .related-card a { font-size: .88rem; font-weight: 600; color: var(--text); line-height: 1.4; display: block; }
+  .related-card a:hover { color: var(--highlight); }
+
+  /* ─── Footer ──────────────────────────────── */
+  footer { background: var(--primary); color: rgba(255,255,255,.45); text-align: center; padding: 28px; font-size: .82rem; }
+  footer a { color: var(--highlight); }
+
+  /* ─── Responsive ──────────────────────────── */
+  @media (max-width: 640px) {
+    .article-title { font-size: 1.7rem; }
+    .article-hero { height: 230px; }
+    .stat-box { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">📡 Ao vivo: últimas notícias sobre saúde, tecnologia e meio ambiente</div>
+  <div class="header-inner">
+    <a class="logo">Conecta<span>News</span></a>
+  </div>
+</header>
+
+<article class="article-wrap">
+  <nav class="breadcrumb">
+    <a href="../index.html">Início</a><i class="fas fa-chevron-right"></i>
+    <a href="../index.html#mental-health">Saúde Mental</a><i class="fas fa-chevron-right"></i>
+    <span>Saúde mental no trabalho</span>
+  </nav>
+
+  <span class="article-tag">Saúde Mental</span>
+  <h1 class="article-title">Empresas brasileiras adotam políticas de saúde mental e colhem resultados expressivos</h1>
+
+  <img class="article-hero" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=900&h=500&fit=crop" alt="Reunião de equipe em ambiente corporativo acolhedor">
+
+  <div class="article-body">
+    <p>O Brasil vive uma transformação silenciosa — e urgente — no ambiente corporativo. Pressionadas pelos altos índices de burnout registrados após a pandemia e por novas exigências trabalhistas, empresas de todos os portes estão estruturando programas formais de saúde mental para seus funcionários. Os dados mostram que os investimentos têm retorno concreto.</p>
+
+    <div class="stat-box">
+      <div class="stat-item"><span class="stat-number">78%</span><div class="stat-label">das empresas implementaram programas em 2 anos</div></div>
+      <div class="stat-item"><span class="stat-number">−35%</span><div class="stat-label">de redução no absenteísmo</div></div>
+      <div class="stat-item"><span class="stat-number">+42%</span><div class="stat-label">de aumento na produtividade</div></div>
+    </div>
+
+    <p>Um levantamento realizado pela Associação Brasileira de Recursos Humanos (ABRH) com mais de 500 empresas revelou que 78% delas implementaram algum tipo de iniciativa formal de saúde mental nos últimos dois anos. O movimento é transversal: abrange startups de tecnologia, indústrias tradicionais, bancos e até o setor público.</p>
+
+    <h2>O que as empresas estão fazendo</h2>
+    <p>As iniciativas variam em escala e sofisticação. As mais comuns incluem acesso a psicólogos via plataformas digitais como Vittude e Zenklub, programas de escuta ativa conduzidos pelo RH, treinamentos de gestores para identificar sinais de sofrimento emocional e políticas de desconexão digital fora do horário comercial.</p>
+
+    <blockquote>
+      <p>"O gestor que não sabe reconhecer um colaborador em sofrimento pode ser tão prejudicial quanto a ausência de qualquer política de saúde mental. Por isso, o treinamento de lideranças é o primeiro passo."</p>
+      <cite>— Renata Lopes, diretora de pessoas da Totvs</cite>
+    </blockquote>
+
+    <p>Empresas mais avançadas já trabalham com indicadores específicos: NPS de bem-estar, taxa de utilização dos benefícios de saúde mental e absenteísmo segmentado por área. Isso permite identificar departamentos sob pressão excessiva antes que o problema se agrave.</p>
+
+    <h2>O impacto nos números</h2>
+    <p>Segundo o relatório da ABRH, as empresas que implantaram programas estruturados observaram queda média de 35% no absenteísmo relacionado a transtornos psicológicos e redução de 51% na rotatividade voluntária. O retorno sobre investimento médio calculado foi de R$ 3,20 para cada real aplicado em saúde mental corporativa.</p>
+    <p>O Magazine Luiza, pioneiro no tema, reportou que desde a criação de sua área dedicada a bem-estar emocional, em 2021, os afastamentos por CID F (transtornos mentais e comportamentais) caíram 44% e a satisfação dos funcionários — medida pelo eNPS — subiu 18 pontos.</p>
+
+    <h2>Desafios ainda presentes</h2>
+    <p>Apesar dos avanços, especialistas alertam que muitas iniciativas ainda são superficiais: palestras esporádicas e campanhas de conscientização sem estrutura de suporte não são suficientes. A ausência de confidencialidade e o estigma em torno de buscar ajuda psicológica continuam sendo barreiras significativas, especialmente em culturas corporativas mais hierárquicas.</p>
+    <p>A tendência para os próximos anos, segundo a consultora Mônica Faria, é a integração da saúde mental às políticas de ESG das empresas, tornando-a um critério avaliado por investidores e parceiros comerciais — o que deve acelerar ainda mais a adoção de práticas mais robustas.</p>
+  </div>
+
+  <section class="related">
+    <div class="related-title">Continue lendo · Saúde Mental</div>
+    <div class="related-grid">
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=200&fit=crop" alt="">
+        <div class="related-card-body"><div class="related-card-tag">Saúde Mental</div><a href="saude-mindfulness.html">Meditação mindfulness reduz estresse em 40%</a></div>
+      </div>
+      <div class="related-card">
+        <img src="https://images.unsplash.com/photo-1607827447604-d9a8c439186e?w=400&h=200&fit=crop" alt="">
+        <div class="related-card-body"><div class="related-card-tag">Saúde Mental</div><a href="saude-tecnologia.html">Tecnologia auxilia no tratamento de ansiedade e depressão</a></div>
+      </div>
+    </div>
+  </section>
+</article>
+
+<footer>&copy; 2026 <a href="../index.html">Conecta News</a>. Todos os direitos reservados.</footer>
+</body>
+</html>
